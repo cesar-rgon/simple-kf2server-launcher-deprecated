@@ -8,8 +8,8 @@ The file "Simple-KF2server-launcher.zip" contains binary files to execute the ap
 The file "Simple-KF2server-launcher.apz" is the source project (It needs to be edit with Autoplay Media Studio if you want to make changes on it).
 
 ```
-Version: 1.0
-Last modified date: 2018/03/31
+Version: 1.1
+Last modified date: 2018/04/03
 Author: César Rodríguez González
 Language: English, Spanish
 ```
