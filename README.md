@@ -71,7 +71,7 @@ Password: <Web Password>
 **Language**: This field is mandatory. To manage (add/remove/delete) Language list, just edit text file: AutoPlay\Docs\Language.properties
 
 **Launch server**: Launch a Killing Floor 2 server with the specified filters. All mandatory fields must be specified.
-If there is not a profile, server config files are placed in folder: KFGame\Config\_NoneProfile. If a profile is selected, server config files are placed in folder: KFGame\Config\PROFILENAME. So, the original config files placed in folder: KFGame\Config are never modified.
+If there is not a profile, server config files are placed in folder: KFGame\Config\\\_NoneProfile. If a profile is selected, server config files are placed in folder: KFGame\Config\PROFILENAME. So, the original config files placed in folder: KFGame\Config are never modified.
 
 ### Anex
 #### A1. Command line arguments
@@ -93,8 +93,8 @@ The launcher, on startup, will load the profile MYPROFILE and execute the server
 You need one profile per server. Each profile should contain a different server name to be identified. Further more, each profile must have different ports eachother.
 
 For example: Two Servers on same computer
-PROFILE1: Server name: My Server 1; Ports: 8080, 7777, 27015
-PROFILE2: Server name: My Server 2; Ports: 8081, 7778, 27016
+- PROFILE1: Server name: My Server 1; Ports: 8080, 7777, 27015
+- PROFILE2: Server name: My Server 2; Ports: 8081, 7778, 27016
 
 _Steps (interactive way)_:
 - Start the launcher
