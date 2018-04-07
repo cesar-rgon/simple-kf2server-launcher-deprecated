@@ -4,8 +4,8 @@ Simple Killing Floor 2 Server Launcher ![Logo](images/icon.png)
 Application to easily customize and launch a Killing Floor 2 Server through a visual interface instead of edditing batch files or server's config files. It has been developed with Autoplay Media Studio 8.
 
 ```
-Version: 1.1
-Last modified date: 2018/04/03
+Version: 1.2
+Last modification date: 2018/04/07
 Author: César Rodríguez González
 Language: English, Spanish
 ```
@@ -64,9 +64,13 @@ Password: <Web Password>
 
 **Ports**: Ports are mandatory. You need to open ports in your router and firewall. If more than one server is launched, ports must be different between them (one profile per server configuration).
 
-**URL image server**: This field is optional. This link must return an uploaded image to internet and it will be used as a preview image in your Killing Floor 2 server. Resolution must be 512x256 pixels.
+**Your clan**: This field is optional
 
-**Messages**: These fields are optional. They are welcome messages in starting screen of the server.
+**Your web link**: This field is optional
+
+**URL image server**: This field is optional. This link must return an uploaded image to internet and it will be used as a preview image in your Killing Floor 2 server. Format and resolution must be PNG 512x256 pixels.
+
+**Welcome message**: This field is optional. It's a welcome message in starting screen of the server.
 
 **Language**: This field is mandatory. To manage (add/remove/delete) Language list, just edit text file: AutoPlay\Docs\Language.properties
 
