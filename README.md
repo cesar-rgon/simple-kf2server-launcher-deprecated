@@ -5,7 +5,7 @@ Application to easily customize and launch a Killing Floor 2 Server through a vi
 
 ```
 Version: 1.2.1
-Last modification date: 2018/04/17
+Last modification date: 2018/04/18
 Supported OS: Microsoft Windows
 Author: César Rodríguez González
 Language: English, Spanish
@@ -20,15 +20,15 @@ The file "Simple-KF2server-launcher.zip" contains binary files to execute the ap
 The file "Simple-KF2server-launcher.apz" is the source project (It needs to be edit with Autoplay Media Studio if you want to make changes on it).
 
 ##### Index
-> 1. [Pre-requisites](#Pre-requisites)
-> 2. [Installing and running the launcher](#Installing-and-running-the-launcher)
-> 3. [Understanding the launcher](#Understanding-the-launcher)
-> 4. [Anex](#Anex)
->   - [A1. Add a custom map to the Launcher](#A1.-Add-a-custom-map-to-the-Launcher)
->   - [A2. Add "Controlled Difficulty" game type to the launcher](#A2.-Add-"Controlled Difficulty"-game-type-to-the-launcher)
->   - [A3. Command line arguments](#A3.-Command-line-arguments)
->   - [A4. How to execute more than one KF2 server on same computer](#A4.-How-to-execute-more-than-one-KF2-server-on-same-computer)
->   - [A5. Play music when the launcher is executed](#A5.-Play-music-when-the-launcher-is-executed)
+> 1. [Pre-requisites](#pre-requisites)
+> 2. [Installing and running the launcher](#installing-and-running-the-launcher)
+> 3. [Understanding the launcher](#understanding-the-launcher)
+> 4. [Anex](#anex)
+>   - [A1. Add a custom map to the Launcher](#a1-add-a-custom-map-to-the-launcher)
+>   - [A2. Add *Controlled Difficulty* game type to the launcher](#a2-add-controlled-difficulty-game-type-to-the-launcher)
+>   - [A3. Command line arguments](#a3-command-line-arguments)
+>   - [A4. How to execute more than one KF2 server on same computer](#a4-how-to-execute-more-than-one-kf2-server-on-same-computer)
+>   - [A5. Play music when the launcher is executed](#a5-play-music-when-the-launcher-is-executed)
 
 
 ### Pre-requisites
@@ -110,7 +110,7 @@ KF-BikiniAtoll=Bikini Atoll
 ```
 ![Screenshot3](images/screenshot3.png)
 
-#### A2. Add "Controlled Difficulty" game type to the launcher
+#### A2. Add *Controlled Difficulty* game type to the launcher
 ##### Pre-requisites
 * Download the file "ControlledDifficulty.u" from [this][controlled-difficulty-realeases] web page.
 * Copy "ControlledDifficulty.u" file into <KF2-Server-Root\>\KFGame\BrewedPC\Script\ folder as explained in [this][controlled-difficulty-server] web page.
