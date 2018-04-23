@@ -27,7 +27,7 @@ El fichero "Simple-KF2server-launcher.apz" es el proyecto fuente (necesita ser e
 >   - [A1. Agregar un mapa personalizado al Lanzador](#a1-agregar-un-mapa-personalizado-al-lanzador)
 >   - [A2. Agregar el tipo de juego *Dificultad Controlada* al lanzador](#a2-agregar-el-tipo-de-juego-dificultad-controlada-al-lanzador)
 >   - [A3. Argumentos de línea de comandos](#a3-argumentos-de-línea-de-comandos)
->   - [A4. Cómo ejecutar más de un servidor KF2 en el mismo ordenador](#a4-cómo-ejecutar-más-de-un-servidor-KF2-en-el-mismo-ordenador)
+>   - [A4. Cómo ejecutar más de un servidor KF2 en el mismo ordenador](#a4-cómo-ejecutar-más-de-un-servidor-kf2-en-el-mismo-ordenador)
 >   - [A5. Reproducir música cuando el lanzador es ejecutado](#a5-reproducir-música-cuando-el-lanzador-es-ejecutado)
 
 
