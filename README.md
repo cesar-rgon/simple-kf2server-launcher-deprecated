@@ -1,19 +1,19 @@
-Simple Killing Floor 2 Server Launcher ![Logo](images/icon.png)
+Simple Killing Floor 2 Server Launcher ![Logo](images/icon.jpg)
 ===============================================================
 
 Application to easily customize and launch a Killing Floor 2 Server through a visual interface instead of edditing batch files or server's config files. It has been developed with Autoplay Media Studio 8.
 
 ```
-Version: 1.2.1
-Last modification date: 2018/04/18
+Version: 1.2.2
+Last modification date: 2018/04/22
 Supported OS: Microsoft Windows
 Author: César Rodríguez González
 Language: English, Spanish
 ```
 
-![Screenshot1](images/screenshot1.png)
+![Launcher without profile](images/en/launcherWithoutProfile.jpg)
 
-![Screenshot2](images/screenshot2.png)
+![Launcher with profile](images/en/launcherWithProfile.jpg)
 
 The file "Simple-KF2server-launcher.zip" contains binary files to execute the application.
 
@@ -53,44 +53,92 @@ etc (Files and folders of Killing Floor 2 server)
 ### Understanding the launcher
 **Profile**: This field is optional. It allows to save field values (filter values) by profile name. If no profile is selected, field values can not be saved. You can add a new profile or delete the selected one.
 
+![Profile](images/en/profile.jpg)
+
 **Game Type**: This field is mandatory. To manage (add/modify/delete) Game Type list, just edit text file: AutoPlay\Docs\en\GameTypes.properties. At least one game type must exist.
+
+![Game type](images/en/gameType.jpg)
 
 **Map**: This field is mandatory. To manage (add/modify/delete) Map list, just edit text file: AutoPlay\Docs\en\Maps.properties. At least one map must exist.
 
+![Map](images/en/map.jpg)
+
 **Difficulty**: This field is mandatory if game type is not equal to Weekly, disabled in other case. To manage (add/modify/delete) Difficulty list, just edit text file: AutoPlay\Docs\en\Difficulty.properties
+
+![Difficulty](images/en/difficulty.jpg)
 
 **Length**: This field is mandatory if game type is not equal to Weekly or Endless, disabled in other case. To manage (add/modify/delete) Length list, just edit text file: AutoPlay\Docs\en\Length.properties
 
+![Length](images/en/length.jpg)
+
 **Server name**: This field is mandatory. It must contain at least one character.
+
+![Server name](images/en/serverName.jpg)
 
 **Server password**: This field is optional
 
+![Server password](images/en/serverPassword.jpg)
+
 **Max. players**: This field is mandatory. To manage (add/modify/delete) Max. players list, just edit text files: AutoPlay\Docs\en\MaxPlayers.properties and AutoPlay\Docs\en\MaxPlayersVersus.properties
 
-**Web page**: If web page check is enabled you can manage the server through it. Killing Floor 2 server must be launched before you can access web page. Authentication:
+![Max. players](images/en/maxPlayers.jpg)
+
+**Web admin page**: If web page check is enabled you can manage the server through it. Killing Floor 2 server must be launched before you can access web page. Web password is mandatory only is web page is enabled. Authentication:
 ```
 User: admin
 Password: <Web Password>
 ```
 
-**Web password**: This field is mandatory only is web page is enabled
+![Web admin page](images/en/webAdminPage.jpg)
 
 **Ports**: Ports are mandatory. You need to open ports in your router and firewall. If more than one server is launched, ports must be different between them (one profile per server configuration).
 
+![Ports](images/en/ports.jpg)
+
 **Your clan**: This field is optional
+
+![Your clan](images/en/yourClan.jpg)
 
 **Your web link**: This field is optional
 
+![Your web link](images/en/yourWebLink.jpg)
+
 **URL image server**: This field is optional. This link must return an uploaded image to internet and it will be used as a preview image in your Killing Floor 2 server. Format and resolution must be PNG 512x256 pixels.
+
+![URL image server](images/en/urlImageServer.jpg)
 
 **Welcome message**: This field is optional. It's a welcome message in starting screen of the server.
 
+![Welcome message](images/en/welcomeMessage.jpg)
+
 **More parameters**: This field is optional. It defines additional parameters. The format must be: parameter1=value1?parameter2=value2?...?parameterN=valueN
+
+![More parameters](images/en/moreParameters.jpg)
 
 **Language**: This field is mandatory. To manage (add/remove/delete) Language list, just edit text file: AutoPlay\Docs\Language.properties
 
+![Language](images/en/language.jpg)
+
 **Launch server**: Launch a Killing Floor 2 server with the specified filters. All mandatory fields must be specified.
 If there is not a profile, server config files are placed in folder: KFGame\Config\\\_NoneProfile. If a profile is selected, server config files are placed in folder: KFGame\Config\PROFILENAME. So, the original config files placed in folder: KFGame\Config are never modified.
+
+![Launch server](images/en/launchServer.jpg)
+
+**Join server**: Join to Killing Floor 2 server game previously started. If the server has not been started, the operation will start the game but will stay in the main menu of the game. Pre-requisites: To have installed Steam application and Killing Floor 2 game. If you do not define a Game Port (UDP) will not be posible to join the server. If the server has password and join operations hasn't, will not be possible to join the server.
+
+![Join server](images/en/joinServer.jpg)
+
+**Icon to edit PCServer-KFEngine.ini and PCServer-KFGame.ini files**: Link to edit two main config files of an Killing Floor 2 server. Useful for, for example, add new custom maps to the server.
+
+![Icon to edit ini files](images/iconToEditIniFiles.jpg)
+
+**Icon to open music folder**: Link to open the music folder of Killing Floor 2 server launcher. If new files are included to this folder, the launcher will play, automatically, the songs in loop and randomly.
+
+![Icon to open music folder](images/iconToOpenMusicFolder.jpg)
+
+**Icon about the author**: Link to version and author information screen of the launcher.
+
+![Icon about the author](images/iconAboutTheAuthor.jpg)
 
 ### Anex
 #### A1. Add a custom map to the Launcher
@@ -108,7 +156,7 @@ For example:
 ```
 KF-BikiniAtoll=Bikini Atoll
 ```
-![Screenshot3](images/screenshot3.png)
+![Custom map](images/en/customMap.jpg)
 
 #### A2. Add *Controlled Difficulty* game type to the launcher
 ##### Pre-requisites
@@ -128,7 +176,7 @@ For example:
 MaxMonsters=30?CohortSize=15?SpawnMod=1?SpawnPoll=1
 ```
 
-![Screenshot4](images/screenshot4.png)
+![Controlled Difficulty launcher](images/en/controlledDifficultyLauncher.jpg)
 
 #### A3. Command line arguments
 The accepted command line arguments are:
