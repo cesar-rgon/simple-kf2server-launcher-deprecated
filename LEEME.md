@@ -4,8 +4,8 @@ Simple Killing Floor 2 Server Launcher ![Logo](images/icon.jpg)
 Aplicación que permite fácilmente personalizar y lanzar un servidor de Killing Floor 2 a través de una interfaz visual en lugar de editar ficheros batch o de configuración del servidor. Desarrollado con Autoplay Media Studio 8.
 
 ```
-Versión: 1.2.2
-Última fecha modificación: 22/04/2018
+Versión: 1.3
+Última fecha modificación: 05/05/2018
 S.O. soportado: Microsoft Windows
 Autor: César Rodríguez González
 Idioma: Inglés, Español
@@ -15,16 +15,16 @@ Idioma: Inglés, Español
 
 ![Lanzador con perfil](images/es/launcherWithProfile.jpg)
 
-El fichero "Simple-KF2server-launcher.zip" contiene los ficheros binarios para ejecutar la aplicación.
+El fichero "Simple-KF2server-launcher.zip" contiene los ficheros binarios para ejecutar la aplicación. Descarga sólo este fichero si sólamente necesitas usar la aplicación.
 
-El fichero "Simple-KF2server-launcher.apz" es el proyecto fuente (necesita ser editado con Autoplay Media Studio si quieres hacer cambios en él).
+El fichero "Simple-KF2server-launcher.apz" es el proyecto fuente (necesita ser editado con Autoplay Media Studio si quieres hacer cambios en él). Descarga este fichero sólamente si necesitas editar el proyecto de la aplicación.
 
 ##### Índice
 > 1. [Pre-requisitos](#pre-requisitos)
 > 2. [Instalar y ejecutar el lanzador](#instalar-y-ejecutar-el-lanzador)
 > 3. [Entendiendo el lanzador](#entendiendo-el-lanzador)
 > 4. [Anexo](#anexo)
->   - [A1. Agregar un mapa personalizado al Lanzador](#a1-agregar-un-mapa-personalizado-al-lanzador)
+>   - [A1. Agregar o eliminar un mapa personalizado del lanzador y servidor](#a1-agregar-o-eliminar-un-mapa-personalizado-del-lanzador-y-servidor)
 >   - [A2. Agregar el tipo de juego *Dificultad Controlada* al lanzador](#a2-agregar-el-tipo-de-juego-dificultad-controlada-al-lanzador)
 >   - [A3. Argumentos de línea de comandos](#a3-argumentos-de-línea-de-comandos)
 >   - [A4. Cómo ejecutar más de un servidor KF2 en el mismo ordenador](#a4-cómo-ejecutar-más-de-un-servidor-kf2-en-el-mismo-ordenador)
@@ -32,43 +32,45 @@ El fichero "Simple-KF2server-launcher.apz" es el proyecto fuente (necesita ser e
 
 
 ### Pre-requisitos
-- Descargar e instalar un servidor Killing Floor 2. Las instrucciones se encuentran [aquí][kf2server]. Para este documento, suponemos que la carpeta de instalación es: C:\kf2server (pero puede ser cualquier otra).
-- Abrir los puertos necesarios en el router y firewall si quieres que el servidor sea visible desde internet.
+- Conexión a internet para descargar, actualizar y/o publicar un servidor Killing Floor 2.
+- Abrir los puertos necesarios en el router y firewall si quieres que el servidor sea visible desde internet. Los puertos necesarios se muestran [aquí][kf2serverPorts].
 
 ### Instalar y ejecutar el lanzador
 - Descargar el fichero binario desde [aquí][binary-launcher].
-- Extraer el contenido del fichero Simple-KF2server-launcher.zip en la carpeta raíz del servidor Killing Floor 2.
 
-Por ejemplo, el resultado sería:
-```
-C:\kf2server\Autoplay
-C:\kf2server\autorun.exe
-C:\fk2server\icon.ico
-C:\kf2server\lua5.1.dll
-C:\kf2server\lua51.dll
-etc (Ficheros y carpetas del servidor Killing Floor 2)
-```
+> CASO 1: Si NO tienes una instalación previa de servidor de Killing Floor 2:
+- Extraer el contenido del fichero Simple-KF2server-launcher.zip a una carpeta local cualquiera.
+- Crear un acceso directo en tu escritorio al fichero "autorun.exe".
+- Ejecutar el acceso directo.
+- Instalar un servidor Killing Floor 2 pulsando el botón "Instalar / Actualizar servidor" en el lanzador.
+
+> CASO 2: Si tienes una instalación previa de servidor de Killing Floor 2:
+- Extraer el contenido del fichero Simple-KF2server-launcher.zip en la carpeta raíz del servidor Killing Floor 2.
 - Crear un acceso directo en tu escritorio al fichero "autorun.exe".
 - Ejecutar el acceso directo.
 
 ### Entendiendo el lanzador
+**Idioma**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) la lista de Idiomas, pulsa en el icono amarillo situado al lado del elemento combo (esto es análogo a editar el fichero de texto: AutoPlay\Docs\Language.properties). Al menos debe existir un idioma.
+
+![Idioma](images/es/language.jpg)
+
 **Perfil**: Este campo es opcional. Permite guardar los valores de campos (valores de filtros) por perfil. Si no hay perfil seleccionado, los campos no pueden ser guardados. Puedes agregar un nuevo perfil o eliminar uno seleccionado.
 
 ![Perfil](images/es/profile.jpg)
 
-**Tipo de juego**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) los Tipos de Partida, edita el fichero de texto: AutoPlay\Docs\es\GameTypes.properties. Al menos debe existir un tipo de juego.
+**Tipo de juego**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) los Tipos de Partida, pulsa en el icono amarillo situado al lado del elemento combo (esto es análogo a editar el fichero de texto: AutoPlay\Docs\es\GameTypes.properties). Al menos debe existir un tipo de juego.
 
 ![Tipo juego](images/es/gameType.jpg)
 
-**Mapa**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) la lista de Mapas, edita el fichero de texto: AutoPlay\Docs\es\Maps.properties. Al menos debe existir un mapa.
+**Mapa**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) la lista de Mapas Propios, pulsa en el icono amarillo situado al lado del elemento combo (esto es análogo a editar el fichero de texto: AutoPlay\Docs\profiles\TUPERFIL\CustomMaps.properties). La lista oficial de mapas no puede ser modificada por el lanzador, debes editar a mano el fichero de texto: AutoPlay\Docs\es\OfficialMaps.properties. Al menos debe existir un mapa.
 
 ![Mapa](images/es/map.jpg)
 
-**Dificultad**: Este campo es obligatorio si el tipo de juego no es igual a Semanal, desactivado en otro caso. Para administrar (añadir/modificar/borrar) la lista de Dificultades, edita el fichero de texto: AutoPlay\Docs\es\Difficulty.properties.
+**Dificultad**: Este campo es obligatorio si el tipo de juego no es igual a Semanal, desactivado en otro caso. Para administrar (añadir/modificar/borrar) la lista de Dificultades, pulsa en el icono amarillo situado al lado del elemento combo (esto es análogo a editar el fichero de texto: AutoPlay\Docs\es\Difficulty.properties). Al menos debe existir un tipo de dificultad.
 
 ![Dificultad](images/es/difficulty.jpg)
 
-**Duración**: Este campo es obligatorio si el tipo de juego no es igual a Semanal o Sin Fin, desactivado en otro caso. Para administrar (añadir/modificar/borrar) la lista de Duraciones, edita el fichero de texto: AutoPlay\Docs\es\Length.properties.
+**Duración**: Este campo es obligatorio si el tipo de juego no es igual a Semanal o Sin Fin, desactivado en otro caso. Para administrar (añadir/modificar/borrar) la lista de Duraciones, pulsa en el icono amarillo situado al lado del elemento combo (esto es análogo a editar el fichero de texto: AutoPlay\Docs\es\Length.properties). Al menos debe existir un tipo de duración.
 
 ![Duración](images/es/length.jpg)
 
@@ -80,7 +82,7 @@ etc (Ficheros y carpetas del servidor Killing Floor 2)
 
 ![Contraseña servidor](images/es/serverPassword.jpg)
 
-**Max. jugadores**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) los Jugadores Máximos, edita el fichero de texto: AutoPlay\Docs\es\MaxPlayers.properties y AutoPlay\Docs\es\MaxPlayersVersus.properties.
+**Max. jugadores**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) los Jugadores Máximos, pulsa en el icono amarillo situado al lado del elemento combo (esto es análogo a editar el fichero de texto: AutoPlay\Docs\es\MaxPlayers.properties o AutoPlay\Docs\es\MaxPlayersVersus.properties). Al menos debe existir una cifra de máx.jugadores.
 
 ![Max. jugadores](images/es/maxPlayers.jpg)
 
@@ -116,9 +118,9 @@ Contraseña: <Contraseña Web>
 
 ![Más parámetros](images/es/moreParameters.jpg)
 
-**Idioma**: Este campo es obligatorio. Para administrar (añadir/modificar/borrar) la lista de Idiomas, edita el fichero de texto: AutoPlay\Docs\Language.properties
+**Instalar servidor**: Instala un nuevo servidor de Killing Floor 2 o bien actualiza uno existente mediante la aplicación SteamCmd.
 
-![Idioma](images/es/language.jpg)
+![Instalar servidor](images/es/installServer.jpg)
 
 **Lanzar servidor**: Inicia un servidor Killing Floor 2 con los filtros especificados. Todos los campos obligatorios deben ser especificados. Si no hay perfil, los ficheros de configuración del servidor están localizados en la carpeta: KFGame\Config\\\_NoneProfile. Si se selecciona un perfil, los ficheros de configuración del servidor están localizados en la carpeta: KFGame\Config\\\PROFILENAME. De esta forma, los ficheros de configuración originales localizados en la carpeta: KFGame\Config nunca son modificados.
 
@@ -128,7 +130,7 @@ Contraseña: <Contraseña Web>
 
 ![Unirse al servidor](images/es/joinServer.jpg)
 
-**Icono para editar ficheros PCServer-KFEngine.ini y PCServer-KFGame.ini**: Enlace que permite editar los dos ficheros principales de configuración de un servidor Killing Floor 2. Útil para, por ejemplo, agregar nuevos mapas personalizados.
+**Icono para editar ficheros PCServer-KFEngine.ini y PCServer-KFGame.ini**: Enlace que permite editar los dos ficheros principales de configuración de un servidor Killing Floor 2. Útil para revisar la configuración del servidor.
 
 ![Icono para editar ficheros ini](images/iconToEditIniFiles.jpg)
 
@@ -141,22 +143,54 @@ Contraseña: <Contraseña Web>
 ![Icono sobre el autor](images/iconAboutTheAuthor.jpg)
 
 ### Anexo
-#### A1. Agregar un mapa personalizado al Lanzador
+#### A1. Agregar o eliminar un mapa personalizado del lanzador y servidor
 ##### Pre-requisitos
-* Añadir el mapa personalizado al servidor de Killing Floor 2 de acuerdo a [estas][kf2server-custom-maps] instrucciones
-* Iniciar el servidor y verificar que el mapa está disponible.
+* Haber creado un perfil del lanzador.
 
-##### Agragar el mapa personalizado al lanzador
-Edita el fichero de texto "AutoPlay\Docs\es\Maps.properties" y añade la siguiente línea al final del fichero:
+##### Agragar un mapa personalizado al lanzador
+Si añades mapas personalizados al lanzador entonces el lanzador añadirá automáticamente el mapa al servidor de Killing Floor 2 (sin necesidad de editar ningún fichero de configuración).
+
+Para agregar mapas personalizados al lanzador, sigue los siguientes pasos:
+
+1) Pulsa en el icono amarillo situado al lado del elemento combo de mapa (esto es análogo a editar el fichero de texto: "AutoPlay\Docs\profiles\TUPERFIL\CustomMaps.properties").
+
+![Map](images/es/map.jpg)
+
+2) En la ventada de edición de texto agrega líneas al final del fichero con el siguiente formato:
 ```
-KF-MapName=Nombre Mapa o Descripción
+KF-NombreMapa[?idMapa]=Descripción Mapa
 ```
+* [  ] significa: opcional.
+* KF-NombreMapa: Obligatorio. Debe ser igual al nombre de fichero del mapa sin extensión.
+* idMapa: Opcional. Es el identificador de mapa de Steam Workshop.
+* Descripción Mapa: Obligatorio. Será mostrado en el combo de mapas (acepta espacios en blanco).
 
 Por ejemplo:
 ```
-KF-BikiniAtoll=Bikini Atoll
+KF-BikiniAtoll?643383080=Bikini Atoll
+KF-Biolapse?1258411772=Biolapse
+KF-ClubConfession?1215467327=Club Confession
+KF-Corridor?1208883070=Corridor
+KF-Farm?960186191=Farm
+KF-HorzineArena-B1-v5?711621345=Horzine Arena
+KF-IceArena?642421282=Ice Arena
+KF-londonRevamp?643152606=London Revamp
+KF-Arid_Zedlands?1285074158=Arid Zedlands!
 ```
+
 ![Mapa propio](images/es/customMap.jpg)
+
+El lanzador modificará automáticamente estos archivos:
+* KFGame\Config\TUPERFIL\PCServer-KFEngine.ini: Añadiendo una línea por mapa (sólamente para aquellos mapas en los que se ha definido ?idMap). Esta acción descargará los mapas cuando el servidor sea lanzado.
+* KFGame\Config\TUPERFIL\PCServer-KFGame.ini: Añadiendo varias líneas por mapa. Esta acción agregará los mapas al como de mapas de la página web del servidor.
+
+##### Eliminar un mapa personalizado del lanzador
+Si eliminas un mapa personalizado del lanzador entonces el lanzador automáticamente eliminará el mapa de los ficheros de configuración del servidor.
+
+Para hacer esta acción:
+* Pulsa en el icono amarillo situado al lado del elemento combo de mapa (esto es análogo a editar el fichero de texto: "AutoPlay\Docs\profiles\TUPERFIL\CustomMaps.properties").
+* Elimina las líneas adecuadas y guarda los cambios.
+* Inicia el servidor y los mapas serán eliminados automáticamente.
 
 #### A2. Agregar el tipo de juego *Dificultad Controlada* al lanzador
 ##### Pre-requisitos
@@ -164,7 +198,11 @@ KF-BikiniAtoll=Bikini Atoll
 * Copiar el fichero "ControlledDifficulty.u" a la carpeta "<KF2-Server-Root\>\KFGame\BrewedPC\Script\" tal como se explica en [ésta][controlled-difficulty-server] página web.
 
 ##### Agregar el tipo de juego *Dificultad Controlada* al lanzador
-Editar el fichero de texto "AutoPlay\Docs\es\GameTypes.properties" y añade la siguiente línea al final del mismo:
+Pulsa en el icono amarillo situado al lado del elemento combo de tipo de juego (esto es análogo a editar el fichero de texto: "AutoPlay\Docs\es\GameTypes.properties")
+
+![Tipo juego](images/es/gameType.jpg)
+
+y añade la siguiente línea al final del fichero:
 ```
 ControlledDifficulty.CD_Survival=Dificultad Controlada
 ```
@@ -173,7 +211,7 @@ Opcionalmente, añade parámetros adicionales en la sección "Más parámetros".
 
 Por ejemplo:
 ```
-MaxMonsters=30?CohortSize=15?SpawnMod=1?SpawnPoll=1
+MaxMonsters=32?WaveSizeFakes=5?SpawnCycle=basic_heavy
 ```
 
 ![Lanzador Controlled Difficulty](images/es/controlledDifficultyLauncher.jpg)
@@ -200,7 +238,7 @@ Por ejemplo: Dos servidores en el mismo ordenador
 - PERFIL1: Nombre servidor: Mi Servidor 1; Puertos: 8080, 7777, 27015
 - PERFIL2: Nombre servidor: Mi Servidor 2; Puertos: 8081, 7778, 27016
 
-_Pasos (manera interactivo)_:
+_Pasos (manera interactiva)_:
 - Iniciar el lanzador
 - Cargar perfil PROFILE1
 - Lanzar servidor
@@ -224,9 +262,8 @@ Espero que te sea de utilidad esta aplicación.
 Por un jugador para jugadores :)
 
 <!-- References -->
-[kf2server]:https://wiki.tripwireinteractive.com/index.php?title=Dedicated_Server_%28Killing_Floor_2%29
+[kf2serverPorts]:https://wiki.tripwireinteractive.com/index.php?title=Dedicated_Server_%28Killing_Floor_2%29#Ports
 [binary-launcher]:https://github.com/cesar-rgon/simple-kf2server-launcher/raw/master/Simple-KF2server-launcher.zip
-[kf2server-custom-maps]:https://wiki.tripwireinteractive.com/index.php?title=Dedicated_Server_(Killing_Floor_2)#Setting_Up_Steam_Workshop_For_Servers
 [controlled-difficulty-realeases]:https://github.com/notblackout/kf2-controlled-difficulty/releases
 [controlled-difficulty-server]:https://github.com/notblackout/kf2-controlled-difficulty/blob/master/server.md
 [controlled-difficulty-options]:https://github.com/notblackout/kf2-controlled-difficulty/blob/master/options.md

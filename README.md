@@ -4,8 +4,8 @@ Simple Killing Floor 2 Server Launcher ![Logo](images/icon.jpg)
 Application to easily customize and launch a Killing Floor 2 Server through a visual interface instead of edditing batch files or server's config files. It has been developed with Autoplay Media Studio 8.
 
 ```
-Version: 1.2.2
-Last modification date: 2018/04/22
+Version: 1.3
+Last modification date: 2018/05/05
 Supported OS: Microsoft Windows
 Author: César Rodríguez González
 Language: English, Spanish
@@ -15,16 +15,16 @@ Language: English, Spanish
 
 ![Launcher with profile](images/en/launcherWithProfile.jpg)
 
-The file "Simple-KF2server-launcher.zip" contains binary files to execute the application.
+The file "Simple-KF2server-launcher.zip" contains binary files to execute the application. Download only this file to use the application.
 
-The file "Simple-KF2server-launcher.apz" is the source project (It needs to be edit with Autoplay Media Studio if you want to make changes on it).
+The file "Simple-KF2server-launcher.apz" is the source project (It needs to be edit with Autoplay Media Studio if you want to make changes on it). Download this file only if you want to edit application's project.
 
 ##### Index
 > 1. [Pre-requisites](#pre-requisites)
 > 2. [Installing and running the launcher](#installing-and-running-the-launcher)
 > 3. [Understanding the launcher](#understanding-the-launcher)
 > 4. [Anex](#anex)
->   - [A1. Add a custom map to the Launcher](#a1-add-a-custom-map-to-the-launcher)
+>   - [A1. Add or remove a custom map from the launcher and the server](#a1-add-or-remove-a-custom-map-from-the-launcher-and-the-server)
 >   - [A2. Add *Controlled Difficulty* game type to the launcher](#a2-add-controlled-difficulty-game-type-to-the-launcher)
 >   - [A3. Command line arguments](#a3-command-line-arguments)
 >   - [A4. How to execute more than one KF2 server on same computer](#a4-how-to-execute-more-than-one-kf2-server-on-same-computer)
@@ -32,42 +32,45 @@ The file "Simple-KF2server-launcher.apz" is the source project (It needs to be e
 
 
 ### Pre-requisites
-- Download and install a Killing Floor 2 Server. Instructions can be found [here][kf2server]. For this document, we supose that the installation folder is: C:\kf2server (but can be any other).
-- Open needed ports in your router and firewall if you want your server be visible on internet.
+- Internet connection to download, update and/or publish a Killing Floor 2 server.
+- Open needed ports in your router and firewall if you want your server be visible on internet. Needed ports are shown [here][kf2serverPorts].
 
 ### Installing and running the launcher
 - Download binary file from [here][binary-launcher].
-- Extract the content of the Simple-KF2server-launcher.zip file in your Killing Floor 2 server folder.
-For example, the result would be:
-```
-C:\kf2server\Autoplay
-C:\kf2server\autorun.exe
-C:\fk2server\icon.ico
-C:\kf2server\lua5.1.dll
-C:\kf2server\lua51.dll
-etc (Files and folders of Killing Floor 2 server)
-```
+
+> CASE 1: If you do NOT have a previous installation of a Killing Floor 2 server:
+- Extract the content of the Simple-KF2server-launcher.zip to any local folder.
+- Create a direct link on your desktop to "autorun.exe" file.
+- Execute direct link to "autorun.exe" file.
+- Install a Killing Floor 2 server by clicking the button "Install / Update server" in the launcher.
+
+> CASE 2: If you have a previous installation of a Killing Floor 2 server:
+- Extract the content of the Simple-KF2server-launcher.zip file to your server's root folder.
 - Create a direct link on your desktop to "autorun.exe" file.
 - Execute direct link to "autorun.exe" file.
 
 ### Understanding the launcher
+**Language**: This field is mandatory. To manage (add/remove/delete) Language list, just click on yellow icon next to combobox item (it is analog to edit text file: AutoPlay\Docs\Language.properties). At least one language must exist.
+
+![Language](images/en/language.jpg)
+
 **Profile**: This field is optional. It allows to save field values (filter values) by profile name. If no profile is selected, field values can not be saved. You can add a new profile or delete the selected one.
 
 ![Profile](images/en/profile.jpg)
 
-**Game Type**: This field is mandatory. To manage (add/modify/delete) Game Type list, just edit text file: AutoPlay\Docs\en\GameTypes.properties. At least one game type must exist.
+**Game Type**: This field is mandatory. To manage (add/modify/delete) Game Type list, just click on yellow icon next to combobox item (it is analog to edit text file: AutoPlay\Docs\en\GameTypes.properties). At least one game type must exist.
 
 ![Game type](images/en/gameType.jpg)
 
-**Map**: This field is mandatory. To manage (add/modify/delete) Map list, just edit text file: AutoPlay\Docs\en\Maps.properties. At least one map must exist.
+**Map**: This field is mandatory. To manage (add/modify/delete) Custom Map list, just click on yellow icon next to combobox item (it is analog to edit text file: AutoPlay\Docs\profiles\YOURPROFILE\CustomMaps.properties). Official Map list can not be modified by the launcher, you must edit manually the text file: AutoPlay\Docs\en\OfficialMaps.properties. At least one map must exist.
 
 ![Map](images/en/map.jpg)
 
-**Difficulty**: This field is mandatory if game type is not equal to Weekly, disabled in other case. To manage (add/modify/delete) Difficulty list, just edit text file: AutoPlay\Docs\en\Difficulty.properties
+**Difficulty**: This field is mandatory if game type is not equal to Weekly, disabled in other case. To manage (add/modify/delete) Difficulty list, just click on yellow icon next to combobox item (it is analog to edit text file: AutoPlay\Docs\en\Difficulty.properties). At least one difficulty type must exist.
 
 ![Difficulty](images/en/difficulty.jpg)
 
-**Length**: This field is mandatory if game type is not equal to Weekly or Endless, disabled in other case. To manage (add/modify/delete) Length list, just edit text file: AutoPlay\Docs\en\Length.properties
+**Length**: This field is mandatory if game type is not equal to Weekly or Endless, disabled in other case. To manage (add/modify/delete) Length list, just click on yellow icon next to combobox item (it is analog to edit text file: AutoPlay\Docs\en\Length.properties). At least one length type must exist.
 
 ![Length](images/en/length.jpg)
 
@@ -79,7 +82,7 @@ etc (Files and folders of Killing Floor 2 server)
 
 ![Server password](images/en/serverPassword.jpg)
 
-**Max. players**: This field is mandatory. To manage (add/modify/delete) Max. players list, just edit text files: AutoPlay\Docs\en\MaxPlayers.properties and AutoPlay\Docs\en\MaxPlayersVersus.properties
+**Max. players**: This field is mandatory. To manage (add/modify/delete) Max. players list, just click on yellow icon next to combobox item (it is analog to edit text file: AutoPlay\Docs\en\MaxPlayers.properties or text file AutoPlay\Docs\en\MaxPlayersVersus.properties). At least one max.players item must exist.
 
 ![Max. players](images/en/maxPlayers.jpg)
 
@@ -115,20 +118,21 @@ Password: <Web Password>
 
 ![More parameters](images/en/moreParameters.jpg)
 
-**Language**: This field is mandatory. To manage (add/remove/delete) Language list, just edit text file: AutoPlay\Docs\Language.properties
+**Install server**: Install a new Killing Floor 2 server or update an existing one through SteamCmd application.
 
-![Language](images/en/language.jpg)
+![Install server](images/en/installServer.jpg)
+
 
 **Launch server**: Launch a Killing Floor 2 server with the specified filters. All mandatory fields must be specified.
 If there is not a profile, server config files are placed in folder: KFGame\Config\\\_NoneProfile. If a profile is selected, server config files are placed in folder: KFGame\Config\PROFILENAME. So, the original config files placed in folder: KFGame\Config are never modified.
 
 ![Launch server](images/en/launchServer.jpg)
 
-**Join server**: Join to Killing Floor 2 server game previously started. If the server has not been started, the operation will start the game but will stay in the main menu of the game. Pre-requisites: To have installed Steam application and Killing Floor 2 game. If you do not define a Game Port (UDP) will not be posible to join the server. If the server has password and join operations hasn't, will not be possible to join the server.
+**Join server**: Join to Killing Floor 2 server game previously started. If the server has not been started, the operation will start the game but will stay in the main menu of the game. Pre-requisites: Steam application and Killing Floor 2 game must be installed. If you do not define a Game Port (UDP) will not be posible to join the server. If the server has password and join operations hasn't, will not be possible to join the server.
 
 ![Join server](images/en/joinServer.jpg)
 
-**Icon to edit PCServer-KFEngine.ini and PCServer-KFGame.ini files**: Link to edit two main config files of an Killing Floor 2 server. Useful for, for example, add new custom maps to the server.
+**Icon to edit PCServer-KFEngine.ini and PCServer-KFGame.ini files**: Link to edit two main config files of an Killing Floor 2 server. Useful to check server's configuration.
 
 ![Icon to edit ini files](images/iconToEditIniFiles.jpg)
 
@@ -141,22 +145,53 @@ If there is not a profile, server config files are placed in folder: KFGame\Conf
 ![Icon about the author](images/iconAboutTheAuthor.jpg)
 
 ### Anex
-#### A1. Add a custom map to the Launcher
+#### A1. Add or remove a custom map from the launcher and the server
 ##### Pre-requisites
-* Add a custom map to the Killing Floor 2 server acording to [this][kf2server-custom-maps] instructions.
-* Start the server and check that the custom map is available.
+- A launcher's profile must have been created to be able to add custom maps.
 
-##### Add the custom map to the launcher
-Just edit text file "AutoPlay\Docs\en\Maps.properties" and add next line at the end of the file:
+##### Add a custom map to the launcher
+If you add custom maps to the launcher then the launcher will automatically add the map to the Killing Floor 2 server (no need to edit server config files at all).
+
+To add custom maps to the launcher, just follow next steps:
+
+1) Click on yellow icon next to map's combobox item (it is analog to edit text file: "AutoPlay\Docs\profiles\YOURPROFILE\CustomMaps.properties").
+
+![Map](images/en/map.jpg)
+
+2) In the text editor window add lines at the end of the file with next format:
 ```
-KF-MapName=Map Name or Description
+KF-MapName[?idMap]=Map Description
 ```
+- [  ] means: optional.
+- KF-MapName: Mandatory. This must be exactly the map's filename without extension.
+- idMap: Optional. The Steam's Workshop map identifier.
+- Map Description: Mandatory. This will be displayed in combobox (whitespaces are accepted).
 
 For example:
 ```
-KF-BikiniAtoll=Bikini Atoll
+KF-BikiniAtoll?643383080=Bikini Atoll
+KF-Biolapse?1258411772=Biolapse
+KF-ClubConfession?1215467327=Club Confession
+KF-Corridor?1208883070=Corridor
+KF-Farm?960186191=Farm
+KF-HorzineArena-B1-v5?711621345=Horzine Arena
+KF-IceArena?642421282=Ice Arena
+KF-londonRevamp?643152606=London Revamp
+KF-Arid_Zedlands?1285074158=Arid Zedlands!
 ```
 ![Custom map](images/en/customMap.jpg)
+
+The launcher will automatically modify these files:
+- KFGame\Config\YOURPROFILE\PCServer-KFEngine.ini: Adding one line per map (only for thouse maps where you define ?idMap). This action will download the custom maps when the server is launched.
+- KFGame\Config\YOURPROFILE\PCServer-KFGame.ini: Adding some lines per map. This action will add the maps to map's combobox item of the server's webpage.
+
+##### Remove a custom map of the launcher
+If you remove a custom map of the launcher then the launcher will automatically remove the map from the server's config files.
+
+To do this action:
+* Click on yellow icon next to map's combobox item (it is analog to edit text file: "AutoPlay\Docs\profiles\YOURPROFILE\CustomMaps.properties").
+* Remove apropiate lines and save changes.
+* Start the server and the maps will be automatically removed.
 
 #### A2. Add *Controlled Difficulty* game type to the launcher
 ##### Pre-requisites
@@ -164,7 +199,12 @@ KF-BikiniAtoll=Bikini Atoll
 * Copy "ControlledDifficulty.u" file into <KF2-Server-Root\>\KFGame\BrewedPC\Script\ folder as explained in [this][controlled-difficulty-server] web page.
 
 ##### Add "Controlled Difficulty" game type to the launcher
-Edit the text file "AutoPlay\Docs\en\GameTypes.properties" and add next line at the end of the file:
+Click on yellow icon next to game-type's combobox item (it is analog to edit text file:
+"AutoPlay\Docs\en\GameTypes.properties")
+
+![Game type](images/en/gameType.jpg)
+
+and add next line at the end of the file:
 ```
 ControlledDifficulty.CD_Survival=Controlled Difficulty
 ```
@@ -173,7 +213,7 @@ Optionally, add custom arguments in section "More parameters". Available argumen
 
 For example:
 ```
-MaxMonsters=30?CohortSize=15?SpawnMod=1?SpawnPoll=1
+MaxMonsters=32?WaveSizeFakes=5?SpawnCycle=basic_heavy
 ```
 
 ![Controlled Difficulty launcher](images/en/controlledDifficultyLauncher.jpg)
@@ -224,9 +264,8 @@ I hope you can find useful this application.
 By a gamer for gamers :)
 
 <!-- References -->
-[kf2server]:https://wiki.tripwireinteractive.com/index.php?title=Dedicated_Server_%28Killing_Floor_2%29
+[kf2serverPorts]:https://wiki.tripwireinteractive.com/index.php?title=Dedicated_Server_%28Killing_Floor_2%29#Ports
 [binary-launcher]:https://github.com/cesar-rgon/simple-kf2server-launcher/raw/master/Simple-KF2server-launcher.zip
-[kf2server-custom-maps]:https://wiki.tripwireinteractive.com/index.php?title=Dedicated_Server_(Killing_Floor_2)#Setting_Up_Steam_Workshop_For_Servers
 [controlled-difficulty-realeases]:https://github.com/notblackout/kf2-controlled-difficulty/releases
 [controlled-difficulty-server]:https://github.com/notblackout/kf2-controlled-difficulty/blob/master/server.md
 [controlled-difficulty-options]:https://github.com/notblackout/kf2-controlled-difficulty/blob/master/options.md
