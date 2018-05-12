@@ -4,8 +4,8 @@ Simple Killing Floor 2 Server Launcher ![Logo](images/icon.jpg)
 Application to easily customize and launch a Killing Floor 2 Server through a visual interface instead of edditing batch files or server's config files. It has been developed with Autoplay Media Studio 8.
 
 ```
-Version: 1.3
-Last modification date: 2018/05/05
+Version: 1.3.1
+Last modification date: 2018/05/12
 Supported OS: Microsoft Windows
 Author: César Rodríguez González
 Language: English, Spanish
@@ -118,7 +118,7 @@ Password: <Web Password>
 
 ![More parameters](images/en/moreParameters.jpg)
 
-**Install server**: Install a new Killing Floor 2 server or update an existing one through SteamCmd application.
+**Install server**: Install a new Killing Floor 2 server or update an existing one through SteamCmd application. You can upgrade to official versions or beta ones.
 
 ![Install server](images/en/installServer.jpg)
 
