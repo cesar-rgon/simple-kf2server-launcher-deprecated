@@ -4,8 +4,8 @@ Simple Killing Floor 2 Server Launcher ![Logo](images/icon.jpg)
 Aplicación que permite fácilmente personalizar y lanzar un servidor de Killing Floor 2 a través de una interfaz visual en lugar de editar ficheros batch o de configuración del servidor. Desarrollado con Autoplay Media Studio 8.
 
 ```
-Versión: 1.3.1
-Última fecha modificación: 12/05/2018
+Versión: 1.3.2
+Última fecha modificación: 18/05/2018
 S.O. soportado: Microsoft Windows
 Autor: César Rodríguez González
 Idioma: Inglés, Español
